@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TPP Shooter</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- The canvas fills the whole screen; Three.js renders into it -->
+  <div id="game-container"></div>
+
+  <!-- We use an importmap so we can write clean ES module imports -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+      }
+    }
+  </script>
+
+  <!-- type="module" lets us use ES6 import/export syntax -->
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
