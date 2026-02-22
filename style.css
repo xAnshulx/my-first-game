@@ -1,0 +1,51 @@
+/* Remove all margins/padding and make the game fill the entire browser window */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  overflow: hidden; /* prevent scrollbars when canvas is fullscreen */
+}
+
+#game-container {
+  width: 100vw;
+  height: 100vh;
+}
+
+/* The crosshair sits in the exact center of the screen using CSS,
+   not 3D geometry — this is cheap and always pixel-perfect */
+#crosshair {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  pointer-events: none; /* clicks pass through it */
+}
+
+#crosshair::before,
+#crosshair::after {
+  content: '';
+  position: absolute;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+/* Horizontal bar of the crosshair */
+#crosshair::before {
+  width: 12px;
+  height: 2px;
+  top: 5px;
+  left: 0;
+}
+
+/* Vertical bar of the crosshair */
+#crosshair::after {
+  width: 2px;
+  height: 12px;
+  top: 0;
+  left: 5px;
+}
