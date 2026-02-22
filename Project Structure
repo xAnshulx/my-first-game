@@ -1,0 +1,7 @@
+/project
+  index.html        ← entry point, loads everything
+  style.css         ← minimal fullscreen styles
+  /src
+    main.js         ← scene setup, game loop
+    PlayerController.js  ← all movement logic
+    InputHandler.js      ← keyboard/mouse state
